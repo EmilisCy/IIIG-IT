@@ -1,0 +1,4 @@
+2 val. 50 min.
+Intervalas 1,  pradinis laikas: 8:0, galinis laikas 9:20,  trukme: 80 minutes 
+Intervalas 2,  pradinis laikas: 10:15, galinis laikas 10:45,  trukme: 30 minutes 
+Intervalas 3,  pradinis laikas: 14:30, galinis laikas 15:30,  trukme: 60 minutes 
