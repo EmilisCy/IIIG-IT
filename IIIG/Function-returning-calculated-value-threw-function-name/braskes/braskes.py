@@ -16,14 +16,19 @@ def braskiu_kiekis_kg(duomenys):
 def daugiausiai_priskynusiu_vardai(vardai, duomenys):
     daugiausia_vardai = []
     vardai_braskiu_kiekis = {vardas: 0 for vardas in vardai}
-    for i, kiekis in enumerate(line)
-        vardai_braskiu_kiekis[vardai[i]] += kiekis
+    for line in duomenys:
+        for i, kiekis in enumerate(line):
+            vardai_braskiu_kiekis[vardai[i]] += kiekis
 
     max_kiekis = max(vardai_braskiu_kiekis.values())
     for vardas, kiekis in vardai_braskiu_kiekis.items():
-        daugiausia_vardai(vardas)
+        daugiausia_vardai.append(vardas)
     return daugiausia_vardai
 
-with open('IIIG/Function-returning-calculated-value-threw-function-name/braskes/rezultatai5.txt') as e:
+bendras_braskiu_kiekis = braskiu_kiekis_kg(duomenys)
+daugiausia_vardai = daugiausiai_priskynusiu_vardai(vardai,duomenys)
+
+with open('IIIG/Function-returning-calculated-value-threw-function-name/braskes/rezultatai5.txt'. 'w') as e:
     e.write(f'')
 
+#3 valandas prie sio uzdavinio prasedejau ir vistiek nesuprantu
