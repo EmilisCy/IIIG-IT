@@ -5,15 +5,5 @@ This repository contains my **Python homework assignments** for the 11th grade *
 ---
 
 ## Technologies Used :computer:
-- **Python 3.x**
+- **Python 3.13.7**
 
----
-
-## Getting Started :rocket:
-
-### 1. Clone the repository
-Run this in your terminal:
-
-```bash
-git clone https://github.com/yourusername/iiig-homework.git
-cd iiig-homework
