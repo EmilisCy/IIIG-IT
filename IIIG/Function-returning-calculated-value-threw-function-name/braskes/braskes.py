@@ -2,8 +2,10 @@ def nuskaityti_duomenis():
     with open('IIIG/Function-returning-calculated-value-threw-function-name/braskes/duomenys5.txt', 'r') as f:
         next(f)
         duomenys = [list(map(int, line.split())) for line in f]
-        vardai = ['Vaida', 'Gytis', 'Jonas', 'Rasa']
-    return vardai, duomenys
+    vardai = ['Vaida', 'Gytis', 'Jonas', 'Rasa']
+    eiluciu_skaicius = len(duomenys)
+
+    return vardai, duomenys, eiluciu_skaicius
 
 def braskiu_kiekis_kg(duomenys):
     braskiu_kiekis_sum = 0
@@ -13,22 +15,17 @@ def braskiu_kiekis_kg(duomenys):
             
     return braskiu_kiekis_sum
 
-def daugiausiai_priskynusiu_vardai(vardai, duomenys):
-    daugiausia_vardai = []
-    vardai_braskiu_kiekis = {vardas: 0 for vardas in vardai}
-    for line in duomenys:
-        for i, kiekis in enumerate(line):
-            vardai_braskiu_kiekis[vardai[i]] += kiekis
+def daugiausiai_per_diena(vardai, duomenys):
+    rezultatai = []
+    for diena, eilute in enumerate(duomenys, start=1):
+        max_kiekis = max(eilute)
 
-    max_kiekis = max(vardai_braskiu_kiekis.values())
-    for vardas, kiekis in vardai_braskiu_kiekis.items():
-        daugiausia_vardai.append(vardas)
-    return daugiausia_vardai
+        daugiausiai_vardai = []
+        for i, kiekis in enumerate(eilute):
+            if kiekis == max_kiekis:
+                daugiausiai_vardai.append(vardai[i])
 
-bendras_braskiu_kiekis = braskiu_kiekis_kg(duomenys)
-daugiausia_vardai = daugiausiai_priskynusiu_vardai(vardai,duomenys)
 
-with open('IIIG/Function-returning-calculated-value-threw-function-name/braskes/rezultatai5.txt'. 'w') as e:
-    e.write(f'')
+vardai, duomenys, eiluciu_skaicius = nuskaityti_duomenis()
 
-#3 valandas prie sio uzdavinio prasedejau ir vistiek nesuprantu
+#nebegaliu mission failed
