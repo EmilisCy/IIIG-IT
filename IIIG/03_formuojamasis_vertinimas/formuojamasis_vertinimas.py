@@ -1,7 +1,13 @@
+import os
+
+KATALOGAS = os.path.dirname(os.path.abspath(__file__))
+DUOMENYS = os.path.join(KATALOGAS, 'duomenys.txt')
+REZULTATAI = os.path.join(KATALOGAS, 'rezultatai.txt')
+
 def vidurkio_apskaiciavimas():
     pazymiai = []
     vidurkiai = []
-    with open('IIIG/Function-returning-calculated-value-threw-function-name/Formuojamasis_vertinimas/duomenys3.py', 'r') as f:
+    with open(DUOMENYS, 'r') as f:
         next(f)
         for line in f:
             p = list(map(int, line.split()))
@@ -29,7 +35,7 @@ def vidurkio_apskaiciavimas():
         vidurkiai.append(vidurkis)
 
     
-    with open('IIIG/Function-returning-calculated-value-threw-function-name/Formuojamasis_vertinimas/rezultatai3.py', 'w') as e:
+    with open(REZULTATAI, 'w') as e:
             e.write(', '.join(map(str, vidurkiai)))
 
 vidurkio_apskaiciavimas()

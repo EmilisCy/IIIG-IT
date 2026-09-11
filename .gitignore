@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.mypy_cache/
+
+# Įrankiai / lokalūs nustatymai
+.serena/
+.claude/settings.local.json
+.claude/.headroom_wrap_marker.json

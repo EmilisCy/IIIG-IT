@@ -1,10 +1,16 @@
+import os
+
+KATALOGAS = os.path.dirname(os.path.abspath(__file__))
+DUOMENYS = os.path.join(KATALOGAS, 'duomenys.txt')
+REZULTATAI = os.path.join(KATALOGAS, 'rezultatai.txt')
+
 #Sukuriame bendra masyva
 bendras_masyvas = list(range(1, 10001))
 
 #Funkcija kuri paiima vartotojo duomenis
 def nuskaitome_duomenis():
     vartotojo_duomenys = []
-    with open('IIIG/Function-returning-calculated-value-threw-function-name/Merseno-skaičiaus-srėtis/duomenys6.txt', 'r') as f:
+    with open(DUOMENYS, 'r') as f:
         for domuo in f:
             vartotojo_skc = map(int, domuo.split())
             vartotojo_duomenys.extend(vartotojo_skc)
@@ -69,7 +75,7 @@ grazinimo_duomenis = mersenas_data_int(vartotojo_duomenys, merseno_skc)
 #irasome rezultatus i rezultatas6.txt
 
 
-with open('IIIG/Function-returning-calculated-value-threw-function-name/Merseno-skaičiaus-srėtis/rezultatas6.txt', 'w') as e:
+with open(REZULTATAI, 'w') as e:
     e.write(" ".join(map(str, grazinimo_duomenis)))
     
 end_time = time.time()

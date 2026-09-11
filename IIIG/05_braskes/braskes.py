@@ -1,5 +1,11 @@
+import os
+
+KATALOGAS = os.path.dirname(os.path.abspath(__file__))
+DUOMENYS = os.path.join(KATALOGAS, 'duomenys.txt')
+REZULTATAI = os.path.join(KATALOGAS, 'rezultatai.txt')
+
 def nuskaityti_duomenis():
-    with open('IIIG/Function-returning-calculated-value-threw-function-name/braskes/duomenys5.txt', 'r') as f:
+    with open(DUOMENYS, 'r') as f:
         next(f)
         duomenys = [list(map(int, line.split())) for line in f]
     vardai = ['Vaida', 'Gytis', 'Jonas', 'Rasa']

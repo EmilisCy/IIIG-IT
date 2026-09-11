@@ -1,5 +1,11 @@
+import os
+
+KATALOGAS = os.path.dirname(os.path.abspath(__file__))
+DUOMENYS = os.path.join(KATALOGAS, 'duomenys.txt')
+REZULTATAI = os.path.join(KATALOGAS, 'rezultatai.txt')
+
 # def apskaiciuoti_mokymosi_laika():
-#     with open('IIIG/Function-returning-calculated-value-threw-function-name/Mokymosi_laikas/duomenys2.txt', 'r') as f:
+#     with open(DUOMENYS, 'r') as f:
 #        bendras_laikas = 0
 #        for line in f.readlines()[1:]:
 #             h1, m1, h2, m2 = map(int, line.split())
@@ -7,7 +13,7 @@
 #             galinis = h2 * 60 + m2
 #             bendras_laikas += galinis - pradinis     
 
-#     with open('IIIG/Function-returning-calculated-value-threw-function-name/Mokymosi_laikas/rezultatai2.txt', 'w') as e:
+#     with open(REZULTATAI, 'w') as e:
 #         valandos = bendras_laikas // 60
 #         minutes = bendras_laikas % 60
 #         e.write(f'{valandos} val. {minutes} min.')
@@ -18,7 +24,7 @@
 
 def apskaiciuoti_mokymosi_laika():
     mokymosi_laikai = {}
-    with open('IIIG/Function-returning-calculated-value-threw-function-name/Mokymosi_laikas/duomenys2.txt', 'r') as f:
+    with open(DUOMENYS, 'r') as f:
         bendras_laikas = 0
         for index, line in enumerate(f.readlines()[1:], start=1):
             h1, m1, h2, m2 = map(int, line.split())
@@ -29,7 +35,7 @@ def apskaiciuoti_mokymosi_laika():
 
             mokymosi_laikai[index] = {'pradinis': (h1, m1), 'galinis': (h2, m2), 'trukme': trukme}
 
-    with open('IIIG/Function-returning-calculated-value-threw-function-name/Mokymosi_laikas/rezultatai2.txt', 'w') as e:
+    with open(REZULTATAI, 'w') as e:
         valandos = bendras_laikas // 60
         minutes = bendras_laikas % 60
         e.write(f'{valandos} val. {minutes} min.\n')
