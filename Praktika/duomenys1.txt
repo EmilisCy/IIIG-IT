@@ -1,0 +1,5 @@
+4 
+K1 4 Alfa 6.8 Beta 11.3 Gama 5.9 Delta 6.1 
+K2 3 Beta 8.4 Alfa 7.7 Delta 7.9 
+K3 5 Gama 4.8 Alfa 5.1 Beta 4.6 Delta 5.0 Sigma 4.9 
+K4 2 Sigma 9.2 Gama 8.8 

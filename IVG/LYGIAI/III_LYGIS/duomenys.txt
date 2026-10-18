@@ -1,0 +1,13 @@
+3 
+Sakalai 3 
+Jonas 8 7 9 
+Ona 10 9 8 
+Matas 6 8 7 
+Vilkai 2 
+Ieva 9 10 10 
+Tomas 7 8 9 
+Ereliai 4 
+Lina 8 8 8 
+Rokas 9 7 6 
+Asta 10 9 9 
+Domas 7 7 8 
