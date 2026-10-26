@@ -54,19 +54,6 @@
 #                 geriausia_komanda = komandos_pavadinimas
 
                 
-#             print(f'{komandos_pavadinimas} {komandu_tasku_suma} Geriausias mokinys: {geriausias_mokinys} {geriausio_mokinio_taskai}')
-
-#         print(f'Mokyklos suma: {mokyklos_tasku_suma}')
-
-#         print(f'Geriausia komanda: {geriausia_komanda} {geriausia_komanda_taskai}')
-
-#         if geriausia_mokykla_taskai < mokyklos_tasku_suma:
-#             geriausia_mokykla_taskai = mokyklos_tasku_suma
-#             geriausia_mokykla = mokyklos_kodas
-
-#     print(f'Geriausia mokykla: {geriausia_mokykla} {geriausia_mokykla_taskai}')
-#     print(f'Bent 25 taškus surinko: {minimalus_reikalavimas}')
-    
 
 
 def duomenu_nuskaitymas(kelias):
@@ -98,10 +85,48 @@ def duomenu_nuskaitymas(kelias):
 
         return mokyklos        
 
+def komandos_rezultatas(komanda):
+     suma = 0
+     geriausias_vardas = None
+     geriausio_taskai = -1 
+
+     for mokinys in komanda['mokiniai']:
+          taskai = sum(mokinys['taskai'])
+          suma += taskai
+          if taskai > geriausio_taskai:
+            geriausio_taskai = taskai
+            geriausias_vardas = mokinys['vardas']
+     return suma, geriausias_vardas, geriausio_taskai
+
+          
 
 if __name__ == '__main__':
     with open('IVG/LYGIAI/V_LYGIS/duomenys.txt', 'r') as failas:
         mokyklos = duomenu_nuskaitymas(failas)
 
+        for mokykla in mokyklos:
+            for komanda in mokykla['komandos']:
+                suma, geriausias, geriausio_taskai = komandos_rezultatas(komanda)
+                print(f"{komanda['komandos_pavadinimas']} {suma} Geriausias mokinys: {geriausias} {geriausio_taskai}")
 
+            # {
+            #     'komandos_pavadinimas': 'Orai',
+            #     'mokiniai': [
+            #         {'vardas': 'Jonas', 'taskai': [10, 15, 15]},
+            #         {'vardas': 'Ona',   'taskai': [20, 5]},
+            #     ]
+            # },
 
+#             print(f'{komandos_pavadinimas} {komandu_tasku_suma} Geriausias mokinys: {geriausias_mokinys} {geriausio_mokinio_taskai}')
+
+#         print(f'Mokyklos suma: {mokyklos_tasku_suma}')
+
+#         print(f'Geriausia komanda: {geriausia_komanda} {geriausia_komanda_taskai}')
+
+#         if geriausia_mokykla_taskai < mokyklos_tasku_suma:
+#             geriausia_mokykla_taskai = mokyklos_tasku_suma
+#             geriausia_mokykla = mokyklos_kodas
+
+#     print(f'Geriausia mokykla: {geriausia_mokykla} {geriausia_mokykla_taskai}')
+#     print(f'Bent 25 taškus surinko: {minimalus_reikalavimas}')
+    
