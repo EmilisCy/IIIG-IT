@@ -1,0 +1,12 @@
+10
+K01;Mokslas;2022;240;4.6
+K02;Romanas;2019;380;4.8
+K03;Technologijos;2024;310;4.7
+K04;Romanas;2023;290;4.5
+K05;Mokslas;2021;180;4.9
+K06;Technologijos;2020;420;4.4
+K07;Romanas;2024;350;4.7
+K08;Mokslas;2018;260;4.8
+K09;Technologijos;2023;275;4.9
+K10;Romanas;2022;330;4.6
+2021 4.6
